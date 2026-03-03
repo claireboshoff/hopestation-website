@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book a Venue | Hope Station — George, Western Cape</title>
-  <meta name="description" content="Book Hope Station for your next corporate event, wellness session, workshop or private function in George. Choose a package, pick your date, and pay your deposit online.">
-  <link rel="canonical" href="https://hopestation.co.za/booking.html">
+  <title>Booking Confirmed | Hope Station — George, Western Cape</title>
+  <meta name="description" content="Your booking deposit has been received. Thank you for choosing Hope Station.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,7 +14,6 @@
 </head>
 <body class="bg-white">
   <div id="page-loader" aria-hidden="true"><div class="loader-logo">Hope <span>Station</span></div></div>
-  <div id="toast" role="alert" aria-live="polite"></div>
 
   <nav id="navbar" aria-label="Main navigation">
     <div class="container"><div class="nav-inner">
@@ -28,15 +26,47 @@
 
   <section class="page-hero">
     <div class="container">
-      <span class="eyebrow">Book Now</span>
-      <h1>Reserve <span class="text-green">Hope Station</span></h1>
-      <p>Choose your package, pick a date, and secure your booking with a deposit.</p>
+      <span class="eyebrow">Confirmed</span>
+      <h1>Booking <span class="text-green">Received</span></h1>
+      <p>Your deposit has been processed successfully.</p>
     </div>
   </section>
 
   <section>
-    <div class="container" style="max-width: 900px;">
-      <div id="booking-steps"></div>
+    <div class="container" style="max-width: 700px;">
+      <div style="text-align:center; padding: 3rem 1.5rem; background: var(--warm-gray); border-radius: var(--radius-md);">
+        <div style="width:64px;height:64px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:1.75rem;">&#10003;</div>
+        <h2 style="color:var(--green);margin-bottom:0.75rem;">Thank You!</h2>
+        <p style="color:var(--text-body);max-width:480px;margin:0 auto 1rem;">Your booking deposit has been received and your event date is now reserved at Hope Station.</p>
+        <p style="color:var(--text-muted);font-size:0.9rem;max-width:480px;margin:0 auto 1.5rem;">You will receive a confirmation email shortly with your booking details. If you don't see it within a few minutes, please check your spam folder.</p>
+
+        <div style="background:white;border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:1.5rem;max-width:420px;margin:0 auto 2rem;text-align:left;">
+          <h4 style="margin-bottom:0.75rem;font-size:1rem;">What happens next?</h4>
+          <ol style="list-style:none;counter-reset:step;color:var(--text-body);font-size:0.9rem;">
+            <li style="display:flex;gap:0.75rem;margin-bottom:0.625rem;">
+              <span style="color:var(--green);font-weight:700;min-width:20px;">1.</span>
+              <span>We'll send you a detailed confirmation email</span>
+            </li>
+            <li style="display:flex;gap:0.75rem;margin-bottom:0.625rem;">
+              <span style="color:var(--green);font-weight:700;min-width:20px;">2.</span>
+              <span>Our team will contact you to discuss any special requirements</span>
+            </li>
+            <li style="display:flex;gap:0.75rem;margin-bottom:0.625rem;">
+              <span style="color:var(--green);font-weight:700;min-width:20px;">3.</span>
+              <span>The remaining balance is due 48 hours before your event</span>
+            </li>
+            <li style="display:flex;gap:0.75rem;">
+              <span style="color:var(--green);font-weight:700;min-width:20px;">4.</span>
+              <span>Arrive on the day and enjoy your event!</span>
+            </li>
+          </ol>
+        </div>
+
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="index.html" class="btn btn--gold">Back to Home</a>
+          <a href="contact.html" class="btn btn--outline">Contact Us</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -53,6 +83,5 @@
   </footer>
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/booking.js"></script>
 </body>
 </html>
