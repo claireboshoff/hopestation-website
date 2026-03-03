@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Venue | Hope Station — George, Western Cape</title>
+  <meta name="description" content="Book Hope Station for your next corporate event, wellness session, workshop or private function in George. Submit an enquiry and we'll confirm availability within 24 hours.">
+  <link rel="canonical" href="https://hopestation.co.za/booking.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{green:'#2B5339','green-mid':'#4A7C59','green-light':'#7BA88E',sage:'#9EBD9E',earth:'#6B5B4B','warm-gray':'#F3F5F2'}}}}</script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white">
+  <div id="page-loader" aria-hidden="true"><div class="loader-logo">Hope <span>Station</span></div></div>
+  <div id="toast" role="alert" aria-live="polite"></div>
+
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="container"><div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Hope Station" style="height:36px;width:36px;object-fit:contain;">Hope <span>Station</span></a>
+      <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="spaces.html">Spaces</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="booking.html" class="nav-cta">Book Now</a></li></ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div></div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu"><ul class="mobile-menu-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="spaces.html">Spaces</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="contact.html">Contact</a></li><li><a href="booking.html" style="color:var(--green);">Book Now</a></li></ul></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Book Now</span>
+      <h1>Reserve <span class="text-green">Hope Station</span></h1>
+      <p>Submit your enquiry below. We'll confirm availability within 24 hours.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
+        <!-- Form (3 cols) -->
+        <div class="lg:col-span-3 fade-in">
+          <form id="booking-form">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Your full name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+27 000 000 0000">
+              </div>
+              <div class="form-group">
+                <label for="company">Company / Organisation</label>
+                <input type="text" id="company" name="company" placeholder="Optional">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="eventType">Event Type *</label>
+              <select id="eventType" name="eventType" required>
+                <option value="">Select event type...</option>
+                <option value="Corporate Strategy Day">Corporate Strategy Day</option>
+                <option value="Corporate Full Day">Corporate Full Day</option>
+                <option value="Wellness / Healing Session">Wellness / Healing Session</option>
+                <option value="Wellness Half-Day Workshop">Wellness Half-Day Workshop</option>
+                <option value="Guest Speaker / Talk">Guest Speaker / Talk</option>
+                <option value="Private Event - Half Day">Private Event - Half Day</option>
+                <option value="Private Event - Full Day">Private Event - Full Day</option>
+                <option value="Training Workshop - 2 Days">Training Workshop - 2 Days</option>
+                <option value="Training Workshop - 3 Days">Training Workshop - 3 Days</option>
+                <option value="Custom / Other">Custom / Other</option>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="form-group">
+                <label for="preferredDate">Preferred Date *</label>
+                <input type="date" id="preferredDate" name="preferredDate" required>
+              </div>
+              <div class="form-group">
+                <label for="timeSlot">Time Slot *</label>
+                <select id="timeSlot" name="timeSlot" required>
+                  <option value="">Select...</option>
+                  <option value="Morning (08:00-12:00)">Morning (08:00-12:00)</option>
+                  <option value="Afternoon (12:00-16:00)">Afternoon (12:00-16:00)</option>
+                  <option value="Full Day (08:00-16:00)">Full Day (08:00-16:00)</option>
+                  <option value="Evening (17:00-21:00)">Evening (17:00-21:00)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="guests">Number of Guests *</label>
+                <input type="number" id="guests" name="guests" required min="1" max="40" placeholder="1-40">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="requirements">Special Requirements</label>
+              <textarea id="requirements" name="requirements" placeholder="Catering needs, AV requirements, seating preferences, accessibility needs..."></textarea>
+            </div>
+
+            <!-- T&C Acceptance -->
+            <div class="form-checkbox" style="background: var(--warm-gray); padding: 1.25rem; border-radius: var(--radius-md); border: 1.5px solid var(--border-light);">
+              <input type="checkbox" id="tc-accept" name="tc-accept" required>
+              <label for="tc-accept">
+                I have read and agree to the <a href="terms.html" target="_blank">Venue Hire Terms &amp; Conditions</a>, including the cancellation policy, alcohol policy, and damage deposit requirements. I understand that a 50% deposit is required to confirm my booking. *
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn--gold btn--lg w-full mt-6" style="width:100%;">Submit Booking Enquiry</button>
+
+            <p class="text-sm text-center mt-4" style="color: var(--text-muted);">No payment required now. We'll confirm availability and send a quote within 24 hours.</p>
+          </form>
+        </div>
+
+        <!-- Sidebar (2 cols) -->
+        <div class="lg:col-span-2 fade-in">
+          <div class="bg-warm p-6 rounded-lg mb-6" style="background: var(--warm-gray);">
+            <h3 class="mb-4" style="font-size: 1.25rem;">How Booking Works</h3>
+            <ol class="space-y-3 text-sm" style="color: var(--text-body); list-style: none; counter-reset: step;">
+              <li class="flex gap-3">
+                <span style="color: var(--green); font-weight: 700; min-width: 24px;">1.</span>
+                <span>Submit your enquiry using this form</span>
+              </li>
+              <li class="flex gap-3">
+                <span style="color: var(--green); font-weight: 700; min-width: 24px;">2.</span>
+                <span>We confirm availability within 24 hours</span>
+              </li>
+              <li class="flex gap-3">
+                <span style="color: var(--green); font-weight: 700; min-width: 24px;">3.</span>
+                <span>Receive your quote and payment link</span>
+              </li>
+              <li class="flex gap-3">
+                <span style="color: var(--green); font-weight: 700; min-width: 24px;">4.</span>
+                <span>Pay 50% deposit to confirm your booking</span>
+              </li>
+              <li class="flex gap-3">
+                <span style="color: var(--green); font-weight: 700; min-width: 24px;">5.</span>
+                <span>Balance due 48 hours before your event</span>
+              </li>
+              <li class="flex gap-3">
+                <span style="color: var(--green); font-weight: 700; min-width: 24px;">6.</span>
+                <span>Arrive and enjoy your event!</span>
+              </li>
+            </ol>
+          </div>
+
+          <div class="bg-warm p-6 rounded-lg mb-6" style="background: var(--warm-gray);">
+            <h4 style="font-size: 1rem; margin-bottom: 0.75rem;">Payment Methods</h4>
+            <ul class="space-y-2 text-sm" style="color: var(--text-body);">
+              <li>Credit / Debit Card (via PayFast)</li>
+              <li>Instant EFT</li>
+              <li>Standard EFT / Bank Transfer</li>
+            </ul>
+          </div>
+
+          <div class="bg-warm p-6 rounded-lg" style="background: var(--warm-gray);">
+            <h4 style="font-size: 1rem; margin-bottom: 0.75rem;">Quick Contact</h4>
+            <ul class="space-y-2 text-sm" style="color: var(--text-body);">
+              <li><a href="mailto:info@hopestation.co.za" style="color: var(--green);">info@hopestation.co.za</a></li>
+              <li><a href="tel:+27000000000">+27 000 000 0000</a></li>
+              <li><a href="https://wa.me/27000000000" style="color: var(--green); font-weight: 600;">WhatsApp Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div><h4>Hope <span class="text-green">Station</span></h4><p class="text-sm mt-2" style="color:rgba(255,255,255,0.5);">A calm space for clear thinking. George, Western Cape.</p></div>
+        <div><h4>Pages</h4><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="spaces.html">Spaces</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="blog/index.html">Blog</a></li></ul></div>
+        <div><h4>Bookings</h4><ul class="footer-links"><li><a href="booking.html">Book Now</a></li><li><a href="terms.html">Venue Hire T&amp;Cs</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Contact</h4><ul class="footer-links"><li>Minnesota House, George</li><li><a href="mailto:info@hopestation.co.za">info@hopestation.co.za</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Hope Station. All rights reserved. | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></p></div>
+    </div>
+  </footer>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

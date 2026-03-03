@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hope Station | A Calm Space for Clear Thinking — Venue Hire in George, Western Cape</title>
+  <meta name="description" content="Hope Station is a boutique garden venue in George, Western Cape. Boardroom hire, wellness space, workshops and private events. Book your next strategy day, retreat or gathering.">
+  <link rel="canonical" href="https://hopestation.co.za/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hope Station — A Calm Space for Clear Thinking">
+  <meta property="og:description" content="Boutique garden venue in George, Western Cape. Corporate boardroom hire, wellness space, workshops and intimate events.">
+  <meta property="og:url" content="https://hopestation.co.za/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://hopestation.co.za/images/og-home.jpg">
+  <meta property="og:site_name" content="Hope Station">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hope Station — A Calm Space for Clear Thinking">
+  <meta name="twitter:description" content="Boutique garden venue in George, Western Cape.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            green: '#2B5339',
+            'green-mid': '#4A7C59',
+            'green-light': '#7BA88E',
+            sage: '#9EBD9E',
+            earth: '#6B5B4B',
+            'warm-gray': '#F3F5F2',
+            'off-white': '#FAFAF8',
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema.org LocalBusiness + EventVenue -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["EventVenue", "LocalBusiness"],
+    "name": "Hope Station",
+    "description": "A boutique garden venue in George, Western Cape. Boardroom hire, wellness space, workshops and private events.",
+    "url": "https://hopestation.co.za",
+    "telephone": "+27 000 000 0000",
+    "email": "info@hopestation.co.za",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Minnesota House",
+      "addressLocality": "George",
+      "addressRegion": "Western Cape",
+      "postalCode": "6529",
+      "addressCountry": "ZA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-33.9631",
+      "longitude": "22.4617"
+    },
+    "maximumAttendeeCapacity": 40,
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "08:00", "closes": "18:00" }
+    ],
+    "priceRange": "R400 - R15,000",
+    "image": "https://hopestation.co.za/images/hero-bg.jpg",
+    "sameAs": []
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does it cost to hire a venue in George?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hope Station offers boardroom hire from R2,500 for a half day, wellness space from R400 per hour, and full-day private event hire from R5,000. All prices include standard amenities. Visit our pricing page for full details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the capacity of Hope Station?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hope Station is a boutique venue with a capacity of 20 to 40 people, depending on the event configuration. We offer boardroom, classroom, U-shape, theatre and circle setups."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I host a wellness event at Hope Station?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Hope Station is purpose-designed for wellness events including yoga, breathwork, sound healing, meditation and trauma-informed sessions. Our garden setting creates the ideal atmosphere for healing and restorative experiences."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Hope Station located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hope Station is located inside Minnesota House in George, Western Cape, South Africa. We are situated in a lush garden setting with secure parking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I book Hope Station?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Submit an enquiry through our booking page. We'll confirm availability within 24 hours and send you a quote. A 50% deposit secures your booking, with the balance due 48 hours before your event."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-white">
+
+  <!-- Loader -->
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader-logo">Hope <span>Station</span></div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" role="alert" aria-live="polite"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Hope Station" style="height:36px;width:36px;object-fit:contain;">Hope <span>Station</span></a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="spaces.html">Spaces</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-menu-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="spaces.html">Spaces</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html" style="color: var(--gold);">Book Now</a></li>
+    </ul>
+  </div>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="eyebrow">Boutique Venue &middot; George, Western Cape</span>
+      <h1>A Calm Space for <span class="gold">Clear Thinking</span></h1>
+      <p>A private garden venue for corporate strategy days, wellness events, workshops and intimate gatherings. Where clarity meets nature.</p>
+      <div class="hero-btns">
+        <a href="booking.html" class="btn btn--gold btn--lg">Book Your Event</a>
+        <a href="spaces.html" class="btn btn--outline btn--lg">Explore the Space</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHAT WE OFFER
+       ============================================================ -->
+  <section class="bg-white">
+    <div class="container">
+      <div class="text-center mb-16 fade-in">
+        <span class="eyebrow">What We Offer</span>
+        <h2>Five Ways to Use <span class="text-green">Hope Station</span></h2>
+        <p class="mt-3 text-gray-500 max-w-xl mx-auto">Whether you need a boardroom for the day or a healing space for an evening, Hope Station adapts to your vision.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="card fade-in">
+          <div class="card-icon">&#9670;</div>
+          <h3>Corporate Strategy Days</h3>
+          <p>Quarterly planning, leadership offsites and team alignment sessions in a focused garden boardroom setting. Includes presentation screen, wifi, tea and coffee.</p>
+          <a href="pricing.html" class="text-green font-semibold text-sm mt-4 inline-block" style="font-family: var(--font-body);">From R2,500 &rarr;</a>
+        </div>
+        <!-- Card 2 -->
+        <div class="card fade-in">
+          <div class="card-icon">&#9673;</div>
+          <h3>Wellness &amp; Healing</h3>
+          <p>Yoga, breathwork, sound healing, meditation and trauma-informed sessions. Our garden atmosphere creates the ideal restorative environment.</p>
+          <a href="pricing.html" class="text-green font-semibold text-sm mt-4 inline-block" style="font-family: var(--font-body);">From R400/hr &rarr;</a>
+        </div>
+        <!-- Card 3 -->
+        <div class="card fade-in">
+          <div class="card-icon">&#9733;</div>
+          <h3>Guest Speakers &amp; Talks</h3>
+          <p>Motivational speakers, recovery education evenings and family workshops. A space with emotional depth and authentic atmosphere.</p>
+          <a href="pricing.html" class="text-green font-semibold text-sm mt-4 inline-block" style="font-family: var(--font-body);">From R2,000 &rarr;</a>
+        </div>
+        <!-- Card 4 -->
+        <div class="card fade-in">
+          <div class="card-icon">&#9827;</div>
+          <h3>Private Events</h3>
+          <p>Book launches, networking breakfasts, small birthdays and support group gatherings. Intimate, intentional and beautifully contained.</p>
+          <a href="pricing.html" class="text-green font-semibold text-sm mt-4 inline-block" style="font-family: var(--font-body);">From R3,000 &rarr;</a>
+        </div>
+        <!-- Card 5 -->
+        <div class="card fade-in">
+          <div class="card-icon">&#9998;</div>
+          <h3>Training &amp; Workshops</h3>
+          <p>Coaching certifications, practitioner training and corporate workshops. Multi-day bookings with dedicated support and catering options.</p>
+          <a href="pricing.html" class="text-green font-semibold text-sm mt-4 inline-block" style="font-family: var(--font-body);">From R8,000 &rarr;</a>
+        </div>
+        <!-- Card 6 -->
+        <div class="card fade-in">
+          <div class="card-icon">&#10024;</div>
+          <h3>Custom Experiences</h3>
+          <p>Have something unique in mind? We work with you to create bespoke experiences tailored to your group, purpose and vision.</p>
+          <a href="contact.html" class="text-green font-semibold text-sm mt-4 inline-block" style="font-family: var(--font-body);">Get in Touch &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHY HOPE STATION
+       ============================================================ -->
+  <section class="bg-warm">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="fade-in">
+          <span class="eyebrow">Why Hope Station</span>
+          <h2>Not Just a Room. <span class="text-green">A Setting.</span></h2>
+          <p class="mt-4 text-gray-500">Most venues give you four walls and a projector. Hope Station gives you a lush garden, natural light, secure surroundings, and an atmosphere of intentionality that transforms how people think, connect and create.</p>
+          <ul class="mt-6 space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="text-green text-lg mt-0.5">&#10003;</span>
+              <span>Lush garden setting with natural breakout areas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-green text-lg mt-0.5">&#10003;</span>
+              <span>Safe, secure and private property</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-green text-lg mt-0.5">&#10003;</span>
+              <span>Intimate capacity of 20&ndash;40 people</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-green text-lg mt-0.5">&#10003;</span>
+              <span>Presentation equipment, wifi and backup power</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-green text-lg mt-0.5">&#10003;</span>
+              <span>Complimentary tea, coffee and water</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-green text-lg mt-0.5">&#10003;</span>
+              <span>Secure parking on site</span>
+            </li>
+          </ul>
+          <a href="about.html" class="btn btn--gold mt-8">Learn More About the Space</a>
+        </div>
+        <div class="fade-in">
+          <img src="images/venue-garden.jpg" alt="Hope Station garden venue in George, Western Cape" class="rounded-lg shadow-lg" style="width:100%; height:400px; object-fit:cover; background: var(--warm-gray);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRICING PREVIEW
+       ============================================================ -->
+  <section>
+    <div class="container">
+      <div class="text-center mb-12 fade-in">
+        <span class="eyebrow">Transparent Pricing</span>
+        <h2>Know <span class="text-green">Exactly</span> What It Costs</h2>
+        <p class="mt-3 text-gray-500 max-w-lg mx-auto">No hidden fees. No "rates on request." We believe in clarity.</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto fade-in">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Space</th>
+              <th>Duration</th>
+              <th>From</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Corporate Boardroom</td>
+              <td>Half Day (4 hrs)</td>
+              <td class="price">R2,500</td>
+            </tr>
+            <tr>
+              <td>Corporate Boardroom</td>
+              <td>Full Day (8 hrs)</td>
+              <td class="price">R4,500</td>
+            </tr>
+            <tr>
+              <td>Wellness Space</td>
+              <td>Per Hour</td>
+              <td class="price">R400</td>
+            </tr>
+            <tr>
+              <td>Private Event</td>
+              <td>Half Day (4 hrs)</td>
+              <td class="price">R3,000</td>
+            </tr>
+            <tr>
+              <td>Training Workshop</td>
+              <td>2 Days</td>
+              <td class="price">R8,000</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="text-center mt-6">
+          <a href="pricing.html" class="btn btn--outline">View Full Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
+  <section class="bg-warm">
+    <div class="container container--narrow">
+      <div class="text-center mb-12 fade-in">
+        <span class="eyebrow">Questions</span>
+        <h2>Frequently Asked</h2>
+      </div>
+
+      <div class="fade-in">
+        <div class="faq-item">
+          <div class="faq-question">How far in advance should I book?<span class="icon">+</span></div>
+          <div class="faq-answer"><p>We recommend booking at least 2 weeks in advance for weekday events and 4 weeks for weekend events. Popular months (October to December) fill up quickly, so book early for year-end functions.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is the cancellation policy?<span class="icon">+</span></div>
+          <div class="faq-answer"><p>Full refund for cancellations 14+ days before the event. 50% refund for 7-14 days notice. No refund for cancellations less than 7 days before the event. See our full terms for details.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is alcohol allowed?<span class="icon">+</span></div>
+          <div class="faq-answer"><p>Hope Station operates within a rehabilitation facility environment. Alcohol is strictly prohibited unless prior written approval has been granted. This is non-negotiable and part of our venue hire agreement.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you provide catering?<span class="icon">+</span></div>
+          <div class="faq-answer"><p>Complimentary tea, coffee and water are included with every booking. Full catering (lunch, snacks, platters) is available as an add-on from R120 per person. We work with trusted local caterers in George.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What payment methods do you accept?<span class="icon">+</span></div>
+          <div class="faq-answer"><p>We accept EFT, credit/debit card payments and instant EFT via our secure online payment system. A 50% deposit is required to confirm your booking, with the balance due 48 hours before the event.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA
+       ============================================================ -->
+  <section class="bg-black text-center" style="padding: 5rem 0;">
+    <div class="container">
+      <div class="fade-in">
+        <span class="eyebrow">Ready?</span>
+        <h2 class="text-white mb-4">Book Your <span class="text-green">Next Event</span></h2>
+        <p class="text-gray-400 max-w-md mx-auto mb-8">Submit an enquiry and we'll confirm availability within 24 hours. No commitment until you're ready.</p>
+        <a href="booking.html" class="btn btn--gold btn--lg">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h4>Hope <span class="text-green">Station</span></h4>
+          <p class="text-sm mt-2" style="color: rgba(255,255,255,0.5);">A calm space for clear thinking. Boutique garden venue in George, Western Cape.</p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="spaces.html">Spaces</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog/index.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Bookings</h4>
+          <ul class="footer-links">
+            <li><a href="booking.html">Book Now</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="terms.html">Venue Hire T&amp;Cs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li>Minnesota House, George</li>
+            <li><a href="mailto:info@hopestation.co.za">info@hopestation.co.za</a></li>
+            <li><a href="tel:+27000000000">+27 000 000 0000</a></li>
+            <li class="mt-3"><a href="https://wa.me/27000000000" class="text-green font-semibold" style="font-family: var(--font-body); font-size: 0.85rem;">WhatsApp Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Hope Station. All rights reserved. &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms &amp; Conditions</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
