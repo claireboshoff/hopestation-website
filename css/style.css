@@ -185,7 +185,7 @@ section.section--sm {
 
 .nav-logo img {
   display: block;
-  height: 52px;
+  height: 40px;
   width: auto;
   flex-shrink: 0;
 }
@@ -239,12 +239,13 @@ section.section--sm {
 
 .nav-cta {
   font-family: var(--font-body) !important;
-  font-size: 0.825rem !important;
+  font-size: 0.8rem !important;
   font-weight: 600 !important;
-  background: var(--white) !important;
-  color: var(--green) !important;
-  padding: 0.625rem 1.375rem !important;
+  background: var(--green-mid) !important;
+  color: var(--white) !important;
+  padding: 0.5rem 1.25rem !important;
   border-radius: var(--radius-sm) !important;
+  letter-spacing: 0.03em !important;
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition) !important;
 }
 
@@ -253,8 +254,8 @@ section.section--sm {
 }
 
 .nav-cta:hover {
-  background: var(--sage) !important;
-  color: var(--black) !important;
+  background: var(--green-light) !important;
+  color: var(--white) !important;
   transform: translateY(-1px) !important;
   box-shadow: var(--shadow-green) !important;
 }
@@ -371,12 +372,12 @@ section.section--sm {
 }
 
 .btn--gold {
-  background: var(--gold);
-  color: var(--black);
+  background: var(--green);
+  color: var(--white);
 }
 
 .btn--gold:hover {
-  background: var(--gold-light);
+  background: var(--green-mid);
   transform: translateY(-1px);
   box-shadow: var(--shadow-green);
 }
@@ -890,8 +891,11 @@ section.section--sm {
   align-items: center;
   justify-content: center;
   gap: 0;
-  margin-bottom: 3rem;
-  padding: 0 1rem;
+  margin-bottom: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--warm-gray);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
 }
 
 .step-item {
@@ -902,10 +906,11 @@ section.section--sm {
 }
 
 .step-num {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: var(--border-light);
+  background: var(--white);
+  border: 2px solid var(--border-light);
   color: var(--text-muted);
   display: flex;
   align-items: center;
@@ -927,6 +932,7 @@ section.section--sm {
 
 .step-item.active .step-num {
   background: var(--green);
+  border-color: var(--green);
   color: var(--white);
   box-shadow: 0 0 0 4px rgba(43, 83, 57, 0.15);
 }
@@ -938,6 +944,7 @@ section.section--sm {
 
 .step-item.done .step-num {
   background: var(--green-mid);
+  border-color: var(--green-mid);
   color: var(--white);
 }
 
@@ -946,7 +953,7 @@ section.section--sm {
 }
 
 .step-line {
-  width: 40px;
+  width: 48px;
   height: 2px;
   background: var(--border-light);
   margin: 0 0.5rem;
@@ -1002,36 +1009,57 @@ section.section--sm {
   background: var(--white);
   border: 2px solid var(--border-light);
   border-radius: var(--radius-md);
-  padding: 1.5rem;
+  padding: 1.75rem 1.5rem;
   cursor: pointer;
   transition: all var(--transition);
   text-align: center;
+  position: relative;
 }
 
 .package-card:hover {
   border-color: var(--green-mid);
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
 }
 
 .package-card.selected {
   border-color: var(--green);
-  background: rgba(43, 83, 57, 0.04);
-  box-shadow: 0 0 0 3px rgba(43, 83, 57, 0.12);
+  background: linear-gradient(135deg, rgba(43,83,57,0.03) 0%, rgba(158,189,158,0.08) 100%);
+  box-shadow: 0 0 0 3px rgba(43, 83, 57, 0.12), var(--shadow-sm);
+}
+
+.package-card.selected::after {
+  content: '\2713';
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 24px;
+  height: 24px;
+  background: var(--green);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
 }
 
 .package-name {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--black);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.375rem;
+  line-height: 1.3;
 }
 
 .package-duration {
   font-size: 0.8rem;
   color: var(--text-muted);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.875rem;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .package-price {
