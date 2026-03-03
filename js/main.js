@@ -125,7 +125,7 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
-  /* Booking Form */
+  /* Booking Form — posts to Airtable API directly */
   const bookingForm = document.getElementById('booking-form');
   if (bookingForm) {
     bookingForm.addEventListener('submit', async (e) => {
@@ -134,6 +134,7 @@
       // Validate required fields
       let valid = true;
       bookingForm.querySelectorAll('[required]').forEach(input => {
+        if (input.type === 'checkbox') return; // handled separately
         input.style.borderColor = '';
         if (!input.value.trim()) { input.style.borderColor = '#f87171'; valid = false; }
         if (input.type === 'email' && !validateEmail(input.value)) { input.style.borderColor = '#f87171'; valid = false; }
@@ -143,7 +144,7 @@
       const tcBox = document.getElementById('tc-accept');
       if (tcBox && !tcBox.checked) {
         showToast('Please read and accept the Terms & Conditions before submitting.', 'error');
-        valid = false;
+        return;
       }
 
       if (!valid) {
@@ -157,55 +158,85 @@
 
       // Collect form data
       const fd = new FormData(bookingForm);
-      const payload = {
-        name: fd.get('name') || '',
-        email: fd.get('email') || '',
-        phone: fd.get('phone') || '',
-        company: fd.get('company') || '',
-        eventType: fd.get('eventType') || '',
-        preferredDate: fd.get('preferredDate') || '',
-        timeSlot: fd.get('timeSlot') || '',
-        guests: fd.get('guests') || '',
-        requirements: fd.get('requirements') || '',
-        tcAccepted: true,
-        tcAcceptedAt: new Date().toISOString(),
-        source: 'Hope Station Website'
+      const data = {
+        Name: fd.get('name') || '',
+        Email: fd.get('email') || '',
+        Phone: fd.get('phone') || '',
+        Company: fd.get('company') || '',
+        'Event Type': fd.get('eventType') || '',
+        'Preferred Date': fd.get('preferredDate') || '',
+        'Time Slot': fd.get('timeSlot') || '',
+        'Guest Count': parseInt(fd.get('guests')) || 0,
+        Requirements: fd.get('requirements') || '',
+        'T&C Accepted': true,
+        'T&C Accepted At': new Date().toISOString(),
+        Status: 'New',
+        Source: 'Website'
       };
 
-      // POST to Airtable via config webhook
-      const webhookUrl = window.HOPESTATION_CONFIG && window.HOPESTATION_CONFIG.webhookUrl;
+      const cfg = window.HOPESTATION_CONFIG || {};
+      let submitted = false;
 
-      if (webhookUrl && webhookUrl !== 'PASTE_WEBHOOK_URL_HERE') {
+      // Method 1: Direct Airtable API
+      if (cfg.airtableToken && cfg.airtableBaseId) {
         try {
-          await fetch(webhookUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-          });
-          showToast('Enquiry submitted! We\'ll be in touch within 24 hours.', 'success');
+          const tableName = encodeURIComponent(cfg.airtableTableName || 'Enquiries');
+          const res = await fetch(
+            'https://api.airtable.com/v0/' + cfg.airtableBaseId + '/' + tableName,
+            {
+              method: 'POST',
+              headers: {
+                'Authorization': 'Bearer ' + cfg.airtableToken,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ records: [{ fields: data }] })
+            }
+          );
+          if (res.ok) {
+            submitted = true;
+          } else {
+            console.warn('Airtable API error:', res.status, await res.text());
+          }
         } catch (err) {
-          console.warn('Webhook failed:', err);
-          showToast('Enquiry submitted! We\'ll be in touch within 24 hours.', 'success');
+          console.warn('Airtable submission failed:', err);
         }
-      } else {
-        // Fallback — mailto
-        const subject = encodeURIComponent('Venue Enquiry — ' + payload.eventType);
-        const body = encodeURIComponent(
-          'Name: ' + payload.name + '\n' +
-          'Email: ' + payload.email + '\n' +
-          'Phone: ' + payload.phone + '\n' +
-          'Company: ' + payload.company + '\n' +
-          'Event Type: ' + payload.eventType + '\n' +
-          'Preferred Date: ' + payload.preferredDate + '\n' +
-          'Time Slot: ' + payload.timeSlot + '\n' +
-          'Guests: ' + payload.guests + '\n' +
-          'Requirements: ' + payload.requirements
-        );
-        window.location.href = 'mailto:info@hopestation.co.za?subject=' + subject + '&body=' + body;
       }
 
+      // Fallback: open email client with all details
+      if (!submitted) {
+        const subject = encodeURIComponent('NEW BOOKING ENQUIRY — ' + data['Event Type']);
+        const body = encodeURIComponent(
+          '--- NEW VENUE ENQUIRY ---\n\n' +
+          'Name: ' + data.Name + '\n' +
+          'Email: ' + data.Email + '\n' +
+          'Phone: ' + data.Phone + '\n' +
+          'Company: ' + data.Company + '\n' +
+          'Event Type: ' + data['Event Type'] + '\n' +
+          'Preferred Date: ' + data['Preferred Date'] + '\n' +
+          'Time Slot: ' + data['Time Slot'] + '\n' +
+          'Guests: ' + data['Guest Count'] + '\n' +
+          'Requirements: ' + data.Requirements + '\n' +
+          'T&C Accepted: Yes (' + data['T&C Accepted At'] + ')\n' +
+          'Source: Website\n'
+        );
+        window.open('mailto:info@hopestation.co.za?subject=' + subject + '&body=' + body, '_self');
+      }
+
+      // Show confirmation
       bookingForm.reset();
       if (btn) { btn.textContent = origText; btn.disabled = false; }
+
+      // Show confirmation message inline
+      const confirmDiv = document.createElement('div');
+      confirmDiv.innerHTML = '<div style="text-align:center;padding:3rem 1.5rem;background:#F3F5F2;border-radius:8px;margin-top:1rem;">' +
+        '<h3 style="color:#2B5339;margin-bottom:0.75rem;font-family:Playfair Display,serif;">Enquiry Received</h3>' +
+        '<p style="color:#444;max-width:420px;margin:0 auto;">Thank you for your interest in Hope Station. We will review your enquiry and confirm availability within 24 hours.</p>' +
+        '<p style="color:#6B7B6F;font-size:0.875rem;margin-top:1rem;">Check your email for a confirmation.</p>' +
+        '</div>';
+      bookingForm.parentNode.insertBefore(confirmDiv, bookingForm.nextSibling);
+      bookingForm.style.display = 'none';
+
+      showToast('Enquiry submitted successfully!', 'success');
     });
   }
 

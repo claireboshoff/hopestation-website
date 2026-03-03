@@ -1,16 +1,22 @@
 /**
  * Hope Station — Configuration
  * Update these values with your actual credentials
+ *
+ * SETUP GUIDE:
+ * 1. Create Airtable base "Hope Station CRM" (see reference/hopestation-airtable-setup.md)
+ * 2. Get your Airtable Personal Access Token: airtable.com/create/tokens
+ *    - Scope: data.records:write
+ *    - Access: Hope Station CRM base
+ * 3. Paste the token and base ID below
+ * 4. Commit and push to deploy
  */
 window.HOPESTATION_CONFIG = {
-  // n8n or Airtable webhook URL for booking form submissions
-  webhookUrl: 'PASTE_WEBHOOK_URL_HERE',
+  // Airtable — direct API integration
+  airtableToken: '',        // pat... personal access token
+  airtableBaseId: '',       // app... base ID
+  airtableTableName: 'Enquiries',
 
-  // Airtable direct API (if using instead of webhook)
-  airtableApiKey: '',
-  airtableBaseId: '',
-
-  // PayFast merchant details (for reference — actual integration uses PayFast hosted page)
+  // PayFast merchant details
   payfastMerchantId: '',
   payfastMerchantKey: '',
 };
